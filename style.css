@@ -1,0 +1,242 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  border: 0;
+  background: transparent;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+nav button:hover,
+nav button.ativo {
+  background: #f0f0f0;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.acoes {
+  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.botao {
+  border: 1px solid #222;
+  background: #222;
+  color: rgb(165, 30, 30);
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.botao.secundario {
+  background: white;
+  color: #222;
+}
+
+form {
+  max-width: 500px;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #f7f7f7;
+}
+
+.destaque {
+  border: 1px solid #27ae60;
+  color: #27ae60;
+  background: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.excluir {
+  border: 1px solid #c33;
+  color: #c33;
+  background: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mensagem {
+  margin-top: 14px;
+  padding: 10px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+.vazio {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  color: #666;
+}
+
+.contador {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.item-destaque {
+  background-color: #f0fdf4;
+  font-weight: bold;
+}
+/* ===================================================
+   PALETA DE CORES: PRETO E VERMELHO ("LÁ BRASA")
+   =================================================== */
+:root {
+  --cor-fundo-principal: #121212;   /* Preto escuro de fundo */
+  --cor-fundo-card: #1e1e1e;        /* Fundo dos cards e contêineres */
+  --cor-texto-principal: #ffffff;   /* Texto branco para boa leitura */
+  --cor-texto-secundario: #b3b3b3;  /* Texto cinza claro para detalhes */
+  
+  --cor-vermelho-principal: #d90429;/* Vermelho vibrante dos botões */
+  --cor-vermelho-hover: #ef233c;    /* Vermelho mais claro ao passar o mouse */
+  --cor-vermelho-escuro: #8d99ae;   /* Tom de apoio ou bordas */
+  --cor-borda: #333333;             /* Bordas discretas em cinza escuro */
+}
+
+/* Aplicando o fundo escuro e texto claro na página inteira */
+body {
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================================================
+   ESTILO DOS BOTÕES (VERMELHOS)
+   =================================================== */
+button, .btn {
+  background-color: var(--cor-vermelho-principal);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px; /* Cantos levemente arredondados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(217, 4, 41, 0.3); /* Sombra suave vermelha */
+}
+
+/* Efeito ao passar o cursor sobre o botão */
+button:hover, .btn:hover {
+  background-color: var(--cor-vermelho-hover);
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 6px 15px rgba(239, 35, 60, 0.5); /* Sombra vermelha mais intensa */
+}
+
+/* Efeito ao clicar no botão */
+button:active, .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(217, 4, 41, 0.3);
+}
+
+/* ===================================================
+   DETALHES E CARDS DO RESTAURANTE / CARDÁPIO
+   =================================================== */
+/* Cabeçalho e títulos */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* Destaque em vermelho nos títulos (ex: <span class="destaque">Lá Brasa</span>) */
+.destaque, h1 span {
+  color: var(--cor-vermelho-principal);
+}
+
+/* Caixas de produtos/itens do cardápio */
+.card, .item-cardapio {
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+/* Borda vermelha em destaque ao passar o mouse sobre um card */
+.card:hover, .item-cardapio:hover {
+  border-color: var(--cor-vermelho-principal);
+}
+
+/* Preço em destaque vermelho */
+.preco {
+  color: var(--cor-vermelho-hover);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
